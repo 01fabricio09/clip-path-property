@@ -1,0 +1,68 @@
+/* ===== ESTILOS GLOBAIS ===== */
+
+/* Reset básico e centralização do conteúdo na página */
+body {
+margin: 0; /* Remove margens padrão do navegador */
+padding: 0; /* Remove preenchimento padrão do navegador */
+height: 100vh; /* Altura igual à viewport (100% da tela) */
+display: flex; /* Ativa o modelo de layout flexível */
+justify-content: center; /* Centraliza horizontalmente o conteúdo */
+align-items: center; /* Centraliza verticalmente o conteúdo */
+font-family: sans-serif; /* Define uma fonte sem serifa como padrão */
+}
+
+/* ===== CARTÃO PRINCIPAL ===== */
+
+/* Container principal que funciona como cartão */
+.card {
+position: relative; /* Permite que elementos filhos com position: absolute sejam posicionados em relação a este container */
+width: 400px; /* Largura fixa de 400 pixels */
+height: 400px; /* Altura fixa de 400 pixels (formato quadrado) */
+background-color: black; /* Cor de fundo preta (será visível quando a imagem não cobrir totalmente) */
+}
+
+/* ===== ESTILOS GLOBAIS ===== */
+
+/* Reset básico e centralização do conteúdo na página */
+body {
+margin: 0; /* Remove margens padrão do navegador */
+padding: 0; /* Remove preenchimento padrão do navegador */
+height: 100vh; /* Altura igual à viewport (100% da tela) */
+display: flex; /* Ativa o modelo de layout flexível */
+justify-content: center; /* Centraliza horizontalmente o conteúdo */
+align-items: center; /* Centraliza verticalmente o conteúdo */
+font-family: sans-serif; /* Define uma fonte sem serifa como padrão */
+}
+
+/* ===== CARTÃO PRINCIPAL ===== */
+
+/* Container principal que funciona como cartão */
+.card {
+position: relative; /* Permite que elementos filhos com position: absolute sejam posicionados em relação a este container */
+width: 400px; /* Largura fixa de 400 pixels */
+height: 400px; /* Altura fixa de 400 pixels (formato quadrado) */
+background-color: black; /* Cor de fundo preta (será visível quando a imagem não cobrir totalmente) */
+}
+
+/* ===== IMAGEM (EFEITO DE REVELAÇÃO) ===== */
+
+/* Estilo da imagem que cobre todo o cartão */
+img {
+position: absolute; /* Posiciona a imagem de forma absoluta dentro do .card */
+top: 0; /* Alinha no topo do cartão */
+left: 0; /* Alinha na esquerda do cartão */
+width: 100%; /* Ocupa 100% da largura do cartão */
+height: 100%; /* Ocupa 100% da altura do cartão */
+object-fit: cover; /* Ajusta a imagem para cobrir todo o espaço sem distorcer (corta se necessário) */
+transition: 0.5s; /* Animação suave de 0.5 segundos para todas as propriedades que mudarem */
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+/* Define o recorte inicial da imagem (quando NÃO está em hover):
+(0,0) → canto superior esquerdo
+(100%,0) → canto superior direito
+(100%,100%) → canto inferior direito
+(0%,100%) → canto inferior esquerdo
+Isso forma um retângulo completo, ou seja, a imagem fica TOTALMENTE VISÍVEL */
+}
+/* Efeito hover na imagem (quando o mouse passa por cima) */
+img:hover {
+clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0% 100%);
